@@ -105,6 +105,8 @@ test('renders all firstName, lastName and email text when submitted. Does NOT re
     const fnameDisplay = screen.getByTestId('firstnameDisplay')
     const lnameDisplay = screen.getByTestId('lastnameDisplay')
     const emailDisplay = screen.getByTestId('emailDisplay')
+    const messageDisplay = screen.queryByTestId('messageDisplay')
+    expect(messageDisplay).toBeNull() 
     expect(fnameDisplay).toHaveTextContent(`First Name: ${nameinput.value}`)
     expect(lnameDisplay).toHaveTextContent(`Last Name: ${lastnameinput.value}`)
     expect(emailDisplay).toHaveTextContent(`Email: ${emailinput.value}`)
